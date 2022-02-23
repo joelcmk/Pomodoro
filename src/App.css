@@ -1,3 +1,30 @@
 body {
-  background-color: navy;
+  background-color: #D8564F;
+}
+
+.pomodoro {
+  display: flex;
+  justify-content: center;
+}
+
+.timer-box {
+  background-color: #DE6761;
+  border-radius: 5px;
+  width: 300px;
+  text-align: center;
+  height: 400px;
+}
+
+.timer {
+  font-size: 100px;
+  color: #FFFFFF;
+}
+
+.button button {
+  color: #D8564F;
+  font-size: 30px;
+  font-weight: bolder;
+  border: 0;
+  padding: 20px 60px; 
+  border-radius: 5px;
 }
