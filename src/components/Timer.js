@@ -3,20 +3,19 @@ import React, { useState, useEffect } from 'react';
 
 function Timer() {
 
-  var [minutes, setMinutes] = useState(1);
+  const [minutes, setMinutes] = useState(25);
   const [seconds, setSeconds] = useState(0);
   const [displayMessage, setDisplayMessage] = useState(false);
-  const [start, setStart] = useState(false);
+  const [start, setStart] = useState();
 
   const timerMinutes = minutes < 10 ? `0${minutes}` : minutes;
   const timerSeconds = seconds < 10 ? `0${seconds}` : seconds;
-  const button = start ? 'START' : 'STOP';
 
   useEffect(() => {
     let interval = setInterval(() => {
       clearInterval(interval)
 
-      if (start === false) {
+      if (start === false || start === undefined) {
         clearInterval(interval)
       } else
         if (seconds === 0) {
@@ -24,9 +23,10 @@ function Timer() {
             setSeconds(59)
             setMinutes(minutes - 1)
           } else {
-            let minutes = displayMessage ? 24 : 4
-            let seconds = 59
+            let minutes = displayMessage ? 25 : 5
+            let seconds = 0
 
+            setStart(!start)
             setSeconds(seconds)
             setMinutes(minutes)
             setDisplayMessage(!displayMessage)
@@ -45,12 +45,17 @@ function Timer() {
     setStart(true);
   }
 
+  const message = () => {
+    if (start) {
+      return <div>Time to focus!</div>;
+    } else if (start === false) {
+      return <div>Time to relax!</div>;
+    }
+  }
+
   return (
     <div className="pomodoro">
       <div className="timer-box">
-        <div className="message">
-          {displayMessage && <div>Break time! You can start your next session in: </div>}
-        </div>
         <div className="timer">
           {timerMinutes}:{timerSeconds}
         </div>
@@ -62,6 +67,10 @@ function Timer() {
             <button onClick={startTimer} >START</button>
           }
         </div>
+      </div>
+      <div className="message">
+        {displayMessage && <div>Break time! You can start your next session in: </div>}
+        {message()}
       </div>
     </div >);
 }
