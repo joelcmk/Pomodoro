@@ -37,17 +37,19 @@ function Timer() {
     }, 1000)
   }, [seconds, start])
 
+  //Stop timer
   const stop = () => {
     setStart(false)
   }
 
+  //Start timer
   const startTimer = () => {
     setStart(true);
   }
 
   const message = () => {
     if (start) {
-      return <div>Time to focus!</div>;
+      return <h1>A Blue Heading</h1>;
     } else if (start === false) {
       return <div>Time to relax!</div>;
     }
