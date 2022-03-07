@@ -49,7 +49,7 @@ function Timer() {
 
   const message = () => {
     if (start) {
-      return <h1>A Blue Heading</h1>;
+      return <div>Time to work!</div>;
     } else if (start === false) {
       return <div>Time to relax!</div>;
     }
