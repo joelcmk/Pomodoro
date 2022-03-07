@@ -16,26 +16,24 @@ function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setNotes([...notes, { id: id, text: value }]);
+    setValue('')
   }
 
   const id = 'id' + Math.random().toString(16).slice(2)
 
-  console.log(notes)
 
   return (
     <div className="App">
       <Timer />
-      <div>
+      <div className="notes">
         <form onSubmit={handleSubmit}>
           <input type="text" value={value} onChange={handleChange}></input>
-        </form>
-        <div>
           {notes.map(x => (
-            <div>{x.text}</div>
+            <div className="">{x.text}</div>
           ))}
-        </div>
+        </form>
       </div>
-    </div>
+    </div >
   );
 }
 
