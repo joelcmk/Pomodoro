@@ -15,12 +15,12 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setNotes([...notes, { id: 23, text: value }]);
+    setNotes([...notes, { id: id, text: value }]);
   }
 
-  const id = Math.random().toString(12).slice(2)
+  const id = 'id' + Math.random().toString(16).slice(2)
 
-  console.log(id)
+  console.log(notes)
 
   return (
     <div className="App">
@@ -30,6 +30,9 @@ function App() {
           <label>Add Task</label>
           <input type="text" value={value} onChange={handleChange}></input>
         </form>
+        <div>
+
+        </div>
       </div>
     </div>
   );
