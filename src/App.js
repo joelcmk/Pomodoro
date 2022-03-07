@@ -6,7 +6,7 @@ import { useState } from 'react';
 
 function App() {
 
-  const [value, setValue] = useState('');
+  const [value, setValue] = useState('Add Task');
   const [notes, setNotes] = useState([]);
 
   const handleChange = (e) => {
@@ -27,11 +27,12 @@ function App() {
       <Timer />
       <div>
         <form onSubmit={handleSubmit}>
-          <label>Add Task</label>
           <input type="text" value={value} onChange={handleChange}></input>
         </form>
         <div>
-
+          {notes.map(x => (
+            <div>{x.text}</div>
+          ))}
         </div>
       </div>
     </div>
