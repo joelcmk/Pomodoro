@@ -1,38 +1,17 @@
 
 import './App.css';
-import { uuid } from 'uuid'
 import Timer from './components/Timer';
-import { useState } from 'react';
+import Form from './components/Form';
+
 
 function App() {
 
-  const [value, setValue] = useState('Add Task');
-  const [notes, setNotes] = useState([]);
-
-  const handleChange = (e) => {
-    setValue(e.target.value)
-  }
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setNotes([...notes, { id: id, text: value }]);
-    setValue('')
-  }
-
-  const id = 'id' + Math.random().toString(16).slice(2)
 
 
   return (
     <div className="App">
       <Timer />
-      <div className="notes">
-        <form onSubmit={handleSubmit}>
-          <input type="text" value={value} onChange={handleChange}></input>
-          {notes.map(x => (
-            <div className="">{x.text}</div>
-          ))}
-        </form>
-      </div>
+      <Form />
     </div >
   );
 }

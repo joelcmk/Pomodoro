@@ -47,6 +47,12 @@ function Timer() {
     setStart(true);
   }
 
+  //Skip 
+  const skip = () => {
+    setMinutes(5);
+    setSeconds(0)
+  }
+
   const message = () => {
     if (start) {
       return <div>Time to work!</div>;
@@ -69,6 +75,7 @@ function Timer() {
             <button onClick={startTimer} >START</button>
           }
         </div>
+        <button onClick={skip} >Skip</button>
       </div>
       <div className="message">
         {displayMessage && <div>Break time! You can start your next session in: </div>}
