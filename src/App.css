@@ -1,16 +1,12 @@
-body {
-  background-color: #D8564F;
-}
-
 .pomodoro {
   display: flex;
   justify-content: center;
 }
 
 .timer-box {
-  background-color: #DE6761;
+  background-color: rgba(255,255,255,0.1);
   border-radius: 5px;
-  width: 300px;
+  width: 400px;
   text-align: center;
   height: 250px;
   margin-bottom: 15px;
@@ -21,18 +17,42 @@ body {
   color: #FFFFFF;
 }
 
+.button {
+  display: flex;
+  justify-content: center;
+  width: 400px;
+}
+
 .button button {
-  color: #D8564F;
   font-size: 30px;
   font-weight: bolder;
   border: 0;
   padding: 20px 60px; 
   border-radius: 5px;
+  background-color: white;
+} 
+
+.skip {
+  background-color: white;
+  width: 50px;
+  padding: 10px;
+  border-radius: 5px;
+  margin-left: 10px;
+  font-size: 40px;
+  font-weight: bolder;
+  align-items: center;
+}
+
+.red {
+  color: #D8564F;
+}
+
+.green {
+  color:#4C9095;
 }
 
 .todo_list {
   display: flex;
-
   flex-wrap: wrap;
   justify-content: center;
 }
