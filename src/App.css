@@ -77,11 +77,17 @@
   margin: 10px 400px 0 400px;
 }
 
+ul {
+  list-style-type: none;
+  position: relative;
+  left: -20px;
+}
+
 .todo svg {
   width: 20px;
   height: 20px;
   position: relative;
-  left: -140px;
+  left: 0px;
   top: 10px;
 }
 

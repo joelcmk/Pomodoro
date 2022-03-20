@@ -1,7 +1,7 @@
 import { MdCheckCircle } from 'react-icons/md';
 import { IconContext } from "react-icons";
 
-function TodoList({ todo, todoList, setTodoList }) {
+function TodoList({ todo, todoList, setTodoList, ref, dnd, dndHnd }) {
 
   const handleComplete = (x) => {
     setTodoList(todoList.map(todo => {
@@ -23,6 +23,7 @@ function TodoList({ todo, todoList, setTodoList }) {
           </div>
         </button>
       </IconContext.Provider>
+
     </>
   );
 }
