@@ -33,17 +33,27 @@ function Form() {
     )
   }
 
+  const handleOnDragEnd = (result) => {
+    if (!result.destination) return;
+
+    const items = Array.from(todoList);
+    const [reorderedItem] = items.splice(result.source.index, 1);
+    items.splice(result.destination.index, 0, reorderedItem);
+
+    setTodoList(items);
+  }
+
   return (
     <div className="todo_list">
       <form onSubmit={handleSubmit}>
         <input type="text" value={value} placeholder="Add Task" size="29.5" onChange={handleChange}></input>
       </form>
-      <DragDropContext>
+      <DragDropContext onDragEnd={handleOnDragEnd}>
         <Droppable droppableId="todos">
           {(provided) => (
             <ul {...provided.droppableProps} ref={provided.innerRef}>
-              {todoList.map(todo => (
-                <Draggable key={todo.id} draggableId={todo.id} index={todo.index}>
+              {todoList.map((todo, index) => (
+                <Draggable key={todo.id} draggableId={todo.id} index={index}>
                   {(provided) => (
                     <li className="todo" ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
                       <IconContext.Provider size="3em" value={todo.completed ? { color: "green" } : { color: "#ECECEC" }}>
@@ -57,6 +67,7 @@ function Form() {
                   )}
                 </Draggable>
               ))}
+              {provided.placeholder}
             </ul>
           )}
         </Droppable>
