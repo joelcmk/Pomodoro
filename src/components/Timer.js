@@ -7,7 +7,7 @@ function Timer() {
   const [seconds, setSeconds] = useState(0);
   const [displayMessage, setDisplayMessage] = useState(false);
   const [start, setStart] = useState(false);
-  const [x, setX] = useState(1);
+  const [x, setX] = useState(1); // X = Cycle number 
   const [background, setBackground] = useState('#D8564F');
   const [color, setColor] = useState('red');
 
@@ -18,7 +18,6 @@ function Timer() {
     document.body.style.background = background
   }, [background])
 
-  console.log(background)
   useEffect(() => {
     if (x === 1) {
       setMinutes(25);
