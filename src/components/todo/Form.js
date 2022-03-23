@@ -1,9 +1,7 @@
 import '../../App.css';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import TodoList from './TodoList';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
-import { MdCheckCircle } from 'react-icons/md';
-import { IconContext } from "react-icons";
 
 function Form() {
 
@@ -22,17 +20,6 @@ function Form() {
     setValue('')
   }
 
-  const handleComplete = (x) => {
-    setTodoList(todoList.map(todo => {
-      if (todo.id === x.id) {
-        return { ...todo, completed: !todo.completed }
-      }
-      console.log(todo)
-      return todo
-    })
-    )
-  }
-
   const handleOnDragEnd = (result) => {
     if (!result.destination) return;
 
@@ -43,6 +30,12 @@ function Form() {
     setTodoList(items);
   }
 
+  const Todos = React.memo(function Todos() {
+    return todoList.map((todo, index) => (
+      <TodoList key={todo.id} todo={todo} todoList={todoList} index={index} setTodoList={setTodoList} />
+    ));
+  });
+
   return (
     <div className="todo_list">
       <form onSubmit={handleSubmit}>
@@ -51,24 +44,10 @@ function Form() {
       <DragDropContext onDragEnd={handleOnDragEnd}>
         <Droppable droppableId="todos">
           {(provided) => (
-            <ul {...provided.droppableProps} ref={provided.innerRef}>
-              {todoList.map((todo, index) => (
-                <Draggable key={todo.id} draggableId={todo.id} index={index}>
-                  {(provided) => (
-                    <li className="todo" ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
-                      <IconContext.Provider size="3em" value={todo.completed ? { color: "green" } : { color: "#ECECEC" }}>
-                        <div className="todo_btn" onClick={() => handleComplete(todo)} >
-                          <div><MdCheckCircle />
-                            <div className={todo.completed ? "todo_text completed" : "todo_text"}>{todo.text}</div>
-                          </div>
-                        </div>
-                      </IconContext.Provider>
-                    </li>
-                  )}
-                </Draggable>
-              ))}
+            <div ref={provided.innerRef} {...provided.droppableProps}>
+              <Todos />
               {provided.placeholder}
-            </ul>
+            </div>
           )}
         </Droppable>
       </DragDropContext>
