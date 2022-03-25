@@ -10,6 +10,7 @@
   text-align: center;
   height: 250px;
   margin-bottom: 15px;
+  margin-top: 40px;
 }
 
 .timer {
@@ -102,4 +103,29 @@ ul {
 
 .completed {
   text-decoration: line-through;
+}
+
+.progress{
+  width: 300px;
+  height: 5px;
+  background-color: white;
+  margin-top: 20px;
+  z-index: 2;
+}
+
+.percentage {
+  background-color: red;
+  width: 100%;
+  height: 5px;
+  z-index: 3;
+}
+
+.progress_bar {
+  height: 20px;
+  position: relative;
+  right: 350px;
+}
+
+.progress_box {
+  width: 20px;
 }
