@@ -1,6 +1,6 @@
 # Pomodoro
 
-Pomodoro is an app for anyone that wants to increase their productivity. I personally use the pomodoro app from https://pomofocus.io/, it was the source of inspiration to develop this application. If you are like me and struggle to concentrate while creating or studing, Pomodoro could help you. You can try it out [https://joelcmk.github.io/Pomodoro/](here).
+Pomodoro is an app for anyone that wants to increase their productivity. I personally use the pomodoro app from https://pomofocus.io/, it was the source of inspiration to develop this application. If you are like me and struggle to concentrate while creating or studing, Pomodoro could help you. You can try it out (https://joelcmk.github.io/Pomodoro/)[here].
 
 [Live site](https://joelcmk.github.io/Recipefy)
 
