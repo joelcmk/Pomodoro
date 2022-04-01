@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-filename-extension */
 import '../../App.css';
 import React, { useState } from 'react';
 import { DragDropContext, Droppable } from 'react-beautiful-dnd';
@@ -43,7 +42,13 @@ function Form() {
   return (
     <div className="todo_list">
       <form onSubmit={handleSubmit}>
-        <input type="text" value={value} placeholder="Add Task" size="29.5" onChange={handleChange} />
+        <input
+          type="text"
+          value={value}
+          placeholder="Add Task"
+          size="29.5"
+          onChange={handleChange}
+        />
       </form>
       <DragDropContext onDragEnd={handleOnDragEnd}>
         <Droppable droppableId="todos">
