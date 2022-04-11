@@ -1,17 +1,11 @@
-<<<<<<< HEAD
+/* eslint-disable react/jsx-no-constructed-context-values */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable react/jsx-filename-extension */
 import React, { useMemo } from 'react';
-=======
-/* eslint-disable react/jsx-no-constructed-context-values */
-/* eslint-disable jsx-a11y/no-static-element-interactions */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable react/jsx-props-no-spreading */
-/* eslint-disable react/react-in-jsx-scope */
-/* eslint-disable react/jsx-filename-extension */
-/* eslint-disable react/prop-types */
->>>>>>> parent of 93e5aa0... Updated code using Airbnb rules for eslint
 import { MdCheckCircle } from 'react-icons/md';
 import { IconContext } from 'react-icons';
 import { Draggable } from 'react-beautiful-dnd';
