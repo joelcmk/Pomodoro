@@ -1,16 +1,9 @@
 {
-  "env": {
-    "browser": true,
-    "es2021": true
-  },
-  "extends": [
-    "plugin:react/recommended",
-    "airbnb"
-  ],
-  "parserOptions": {
-    "ecmaFeatures": {
-      "jsx": true
+    "env": {
+        "browser": true,
+        "es2021": true
     },
+<<<<<<< HEAD
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
@@ -18,3 +11,22 @@
     "react"
   ]
 }
+=======
+    "extends": [
+        "plugin:react/recommended",
+        "airbnb"
+    ],
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react"
+    ],
+    "rules": {
+    }
+}
+>>>>>>> parent of 93e5aa0... Updated code using Airbnb rules for eslint

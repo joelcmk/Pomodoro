@@ -43,13 +43,7 @@ function Form() {
   return (
     <div className="todo_list">
       <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          value={value}
-          placeholder="Add Task"
-          size="29.5"
-          onChange={handleChange}
-        />
+        <input type="text" value={value} placeholder="Add Task" size="29.5" onChange={handleChange} />
       </form>
       <DragDropContext onDragEnd={handleOnDragEnd}>
         <Droppable droppableId="todos">
