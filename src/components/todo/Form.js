@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-filename-extension */
 import '../../App.css';
 import React, { useState } from 'react';
 import { DragDropContext, Droppable } from 'react-beautiful-dnd';

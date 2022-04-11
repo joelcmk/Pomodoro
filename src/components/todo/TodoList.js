@@ -1,5 +1,6 @@
-/* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable react/prop-types */
+/* eslint-disable react/jsx-props-no-spreading */
+/* eslint-disable react/jsx-filename-extension */
 import React, { useMemo } from 'react';
 import { MdCheckCircle } from 'react-icons/md';
 import { IconContext } from 'react-icons';
