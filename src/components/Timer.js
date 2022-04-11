@@ -22,6 +22,7 @@ function Timer() {
   useEffect(() => {
     const focusTime = cycleNumber === 1 || cycleNumber === 3 || cycleNumber === 5;
     const shortBreak = cycleNumber === 2 || cycleNumber === 4;
+    // Rename this const.
     const breaks = setStart(false); setSeconds(0); shortBreak ? setBackground(bgGreen) : setBackground(bgRed); shortBreak ? setColor('green') : setColor('red');
     if (focusTime) {
       breaks;
