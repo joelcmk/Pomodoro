@@ -3,6 +3,8 @@
 import React, { useState, useEffect } from 'react';
 import ProgressBar from './ProgressBar';
 import { bgRed, bgGreen } from '../constants/Index';
+import alarm from '../constants/alarm.mp3';
+import click from '../constants/click.mp3';
 
 function Timer() {
   const [minutes, setMinutes] = useState(25);
@@ -15,6 +17,16 @@ function Timer() {
   const timerMinutes = minutes < 10 ? `0${minutes}` : minutes;
   const timerSeconds = seconds < 10 ? `0${seconds}` : seconds;
 
+  const alarmSound = () => {
+    const sound = new Audio(alarm);
+    sound.play();
+  };
+
+  const clickSound = () => {
+    const sound = new Audio(click);
+    sound.play();
+  };
+
   useEffect(() => {
     document.body.style.background = background;
   }, [background]);
@@ -22,17 +34,18 @@ function Timer() {
   useEffect(() => {
     const focusTime = cycleNumber === 1 || cycleNumber === 3 || cycleNumber === 5;
     const shortBreak = cycleNumber === 2 || cycleNumber === 4;
-    // Rename this const.
-    const breaks = setStart(false); setSeconds(0); shortBreak ? setBackground(bgGreen) : setBackground(bgRed); shortBreak ? setColor('green') : setColor('red');
+    const breaks = shortBreak || cycleNumber === 6;
+    const breakAndFocusTime = setStart(false); setSeconds(0); breaks ? setBackground(bgGreen) : setBackground(bgRed); breaks ? setColor('green') : setColor('red');
     if (focusTime) {
       breaks;
       setMinutes(25);
     } else if (shortBreak) {
-      breaks;
+      // Short break
+      breakAndFocusTime;
       setMinutes(5);
     } else if (cycleNumber === 6) {
       // Long Break
-      breaks;
+      breakAndFocusTime;
       setMinutes(15);
     } else if (cycleNumber === 7) {
       // Repeat Cycle
@@ -54,6 +67,8 @@ function Timer() {
         } else {
           setStart(!start);
           setCycleNumber(cycleNumber + 1);
+          alarmSound();
+          // alert('Break Time!');
         }
       } else {
         setSeconds(seconds - 1);
@@ -63,16 +78,19 @@ function Timer() {
 
   // Stop timer
   const stop = () => {
+    clickSound();
     setStart(false);
   };
 
   // Start timer
   const startTimer = () => {
     setStart(true);
+    clickSound();
   };
 
   // Skip
   const skip = () => {
+    clickSound();
     setStart(false);
     setTimeout(() => {
       setCycleNumber(cycleNumber + 1);
