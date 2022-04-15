@@ -1,6 +1,8 @@
 .pomodoro {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 30px;
 }
 
 .timer-box {
@@ -9,8 +11,7 @@
   width: 400px;
   text-align: center;
   height: 250px;
-  margin-bottom: 15px;
-  margin-top: 40px;
+  margin: 0 auto;
 }
 
 .timer {
@@ -44,6 +45,10 @@
   align-items: center;
 }
 
+.text {
+  margin: 20px;
+}
+
 .red {
   color: #D8564F;
 }
@@ -59,12 +64,12 @@
 }
 
 .todo_list input {
-  width: 300px;
+  width: 400px;
   height: 40px;
   font-size: 20px;
   border: 0;
   border-radius: 5px;
-  margin: 0 3000px;
+  margin: 0 300px;
 }
 
 .todo {

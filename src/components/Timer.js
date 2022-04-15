@@ -13,6 +13,7 @@ function Timer() {
   const [cycleNumber, setCycleNumber] = useState(1);
   const [background, setBackground] = useState(bgRed);
   const [color, setColor] = useState('red');
+  const [text, setText] = useState('Time to focus!');
 
   const timerMinutes = minutes < 10 ? `0${minutes}` : minutes;
   const timerSeconds = seconds < 10 ? `0${seconds}` : seconds;
@@ -35,7 +36,17 @@ function Timer() {
     const focusTime = cycleNumber === 1 || cycleNumber === 3 || cycleNumber === 5;
     const shortBreak = cycleNumber === 2 || cycleNumber === 4;
     const breaks = shortBreak || cycleNumber === 6;
-    const breakAndFocusTime = setStart(false); setSeconds(0); breaks ? setBackground(bgGreen) : setBackground(bgRed); breaks ? setColor('green') : setColor('red');
+
+    const breakAndFocusTime = setStart(false); setSeconds(0); if (breaks) {
+      setBackground(bgGreen);
+      setColor('green');
+      setText('Time to Relax!');
+    } else {
+      setBackground(bgRed);
+      setColor('red');
+      setText('Time to focus!');
+    }
+
     if (focusTime) {
       breaks;
       setMinutes(25);
@@ -97,6 +108,8 @@ function Timer() {
     }, 1000);
   };
 
+  console.log(text);
+
   return (
     <div className="pomodoro">
       <div className="timer-box">
@@ -129,6 +142,7 @@ function Timer() {
           </div>
         </div>
       </div>
+      <span className="text">{text}</span>
     </div>
   );
 }
