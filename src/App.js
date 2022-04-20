@@ -2,7 +2,7 @@
 import React from 'react';
 import './App.css';
 import Timer from './components/Timer';
-import Form from './components/todo/Form';
+import Form from './components/Todo/Form';
 
 function App() {
   return (

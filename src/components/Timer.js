@@ -112,37 +112,37 @@ function Timer() {
 
   return (
     <div className="pomodoro">
+      <span className="text">{text}</span>
+      <ProgressBar cycleNumber={cycleNumber} minutes={minutes} seconds={seconds} />
       <div className="timer-box">
-        <div className="progress_box">
-          <ProgressBar cycleNumber={cycleNumber} minutes={minutes} seconds={seconds} />
-        </div>
-        <div className="timer">
-          {timerMinutes}
-          :
-          {timerSeconds}
-        </div>
-        <div className="button">
-          {start ? (
-            <button type="button" className={color} onClick={stop}>
-              STOP
-            </button>
-          ) : (
-            <button type="button" className={color} onClick={startTimer}>
-              START
-            </button>
-          )}
-          <div
-            role="button"
-            tabIndex={0}
-            className={`skip ${color}`}
-            onClick={skip}
-            onKeyDown={skip}
-          >
-            &gt;
+        <div className="tests">
+          <div className="timer">
+            {timerMinutes}
+            :
+            {timerSeconds}
+          </div>
+          <div className="button">
+            {start ? (
+              <button type="button" className={color} onClick={stop}>
+                STOP
+              </button>
+            ) : (
+              <button type="button" className={color} onClick={startTimer}>
+                START
+              </button>
+            )}
+            <div
+              role="button"
+              tabIndex={0}
+              className={`skip ${color}`}
+              onClick={skip}
+              onKeyDown={skip}
+            >
+              &gt;
+            </div>
           </div>
         </div>
       </div>
-      <span className="text">{text}</span>
     </div>
   );
 }

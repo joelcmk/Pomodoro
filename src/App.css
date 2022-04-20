@@ -1,8 +1,19 @@
-.pomodoro {
+
+body {
+  height: 100vh;
   display: flex;
-  flex-direction: column;
+  align-items: center;
   text-align: center;
-  margin-top: 30px;
+  justify-content: center;
+}
+
+.App {
+  
+}
+
+.pomodoro {
+display: flex;
+flex-direction: column;
 }
 
 .timer-box {
@@ -12,11 +23,17 @@
   text-align: center;
   height: 250px;
   margin: 0 auto;
+  display: flex;
+  align-items: center;
 }
 
 .timer {
+  margin-top: -25px;
   font-size: 100px;
   color: #FFFFFF;
+}
+
+.tests {
 }
 
 .button {
@@ -61,6 +78,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin-top: 20px;
 }
 
 .todo_list input {
@@ -70,6 +88,10 @@
   border: 0;
   border-radius: 5px;
   margin: 0 300px;
+}
+
+.todo_list ::placeholder {
+  padding-left: 10px;
 }
 
 .todo {
@@ -111,18 +133,16 @@ ul {
 }
 
 .progress_bar {
-  margin-left: 5px;
-  height: 20px;
-  width: 390px;
-  display: flex;
-  align-items: center;
+  height: .5px;
+  width: 500px;
+  margin: 0 auto;
+  margin-bottom: 20px;
 }
 
 .progress{
-  width: 390px;
+  width: 500px;
   height: .5px;
   background-color: black;
-  margin-top: 20px;
   z-index: 2;
   display: flex;
   align-items: center;
@@ -133,6 +153,7 @@ ul {
   width: 100%;
   height: 5px;
   z-index: 3;
+  border-radius: 2px;
 }
 
 
