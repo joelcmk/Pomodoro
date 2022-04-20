@@ -16,7 +16,7 @@ function Form() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setTodoList([...todoList, { id, text: value, completed: false }]);
+    setTodoList([{ id, text: value, completed: false }, ...todoList]);
     setValue('');
   };
 

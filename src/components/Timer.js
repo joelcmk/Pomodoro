@@ -108,8 +108,6 @@ function Timer() {
     }, 1000);
   };
 
-  console.log(text);
-
   return (
     <div className="pomodoro">
       <span className="text">{text}</span>
