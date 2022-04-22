@@ -113,7 +113,7 @@ function Timer() {
       <span className="text">{text}</span>
       <ProgressBar cycleNumber={cycleNumber} minutes={minutes} seconds={seconds} />
       <div className="timer-box">
-        <div className="tests">
+        <div>
           <div className="timer">
             {timerMinutes}
             :

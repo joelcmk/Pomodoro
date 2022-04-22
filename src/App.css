@@ -1,19 +1,8 @@
 
-body {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
-}
-
-.App {
-  
-}
-
 .pomodoro {
 display: flex;
 flex-direction: column;
+text-align: center;
 }
 
 .timer-box {
@@ -33,7 +22,8 @@ flex-direction: column;
   color: #FFFFFF;
 }
 
-.tests {
+.text {
+  color: #fff;
 }
 
 .button {
@@ -117,6 +107,7 @@ ul {
   position: relative;
   left: 0px;
   top: 10px;
+  margin-left: 5px;
 }
 
 
@@ -126,6 +117,7 @@ ul {
   left: 20px;
   bottom: 14px;
   font-size: 17px;
+  margin-left: 8px;
 }
 
 .completed {
