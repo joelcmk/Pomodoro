@@ -1,12 +1,15 @@
+body.color {
+  background-color: #4c9095;
+}
 
 .pomodoro {
-display: flex;
-flex-direction: column;
-text-align: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
 
 .timer-box {
-  background-color: rgba(255,255,255,0.1);
+  background-color: rgba(255, 255, 255, 0.1);
   border-radius: 5px;
   width: 400px;
   text-align: center;
@@ -19,7 +22,7 @@ text-align: center;
 .timer {
   margin-top: -25px;
   font-size: 100px;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .text {
@@ -36,10 +39,10 @@ text-align: center;
   font-size: 30px;
   font-weight: bolder;
   border: 0;
-  padding: 20px 60px; 
+  padding: 20px 60px;
   border-radius: 5px;
   background-color: white;
-} 
+}
 
 .skip {
   background-color: white;
@@ -57,11 +60,11 @@ text-align: center;
 }
 
 .red {
-  color: #D8564F;
+  color: #d8564f;
 }
 
 .green {
-  color:#4C9095;
+  color: #4c9095;
 }
 
 .todo_list {
@@ -85,7 +88,7 @@ text-align: center;
 }
 
 .todo {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   margin-top: 10px;
   height: 40px;
   border-radius: 5px;
@@ -110,7 +113,6 @@ ul {
   margin-left: 5px;
 }
 
-
 .todo_text {
   text-align: left;
   position: relative;
@@ -125,15 +127,15 @@ ul {
 }
 
 .progress_bar {
-  height: .5px;
+  height: 0.5px;
   width: 500px;
   margin: 0 auto;
   margin-bottom: 20px;
 }
 
-.progress{
+.progress {
   width: 500px;
-  height: .5px;
+  height: 0.5px;
   background-color: black;
   z-index: 2;
   display: flex;
@@ -147,7 +149,6 @@ ul {
   z-index: 3;
   border-radius: 2px;
 }
-
 
 .progress_box {
   width: 20px;

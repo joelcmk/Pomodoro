@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-/* eslint-disable react/jsx-filename-extension */
 import React, { useState, useEffect } from 'react';
 
 function ProgressBar({ cycleNumber, minutes, seconds }) {
@@ -18,7 +17,9 @@ function ProgressBar({ cycleNumber, minutes, seconds }) {
 
   return (
     <div className="progress_bar">
-      <div className="progress"><div className="percentage" style={{ width: `${porcentage}%` }} /></div>
+      <div className="progress">
+        <div className="percentage" style={{ width: `${porcentage}%` }} />
+      </div>
     </div>
   );
 }

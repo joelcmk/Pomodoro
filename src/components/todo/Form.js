@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-filename-extension */
 import '../../App.css';
 import React, { useState } from 'react';
 import { DragDropContext, Droppable } from 'react-beautiful-dnd';
@@ -30,20 +29,28 @@ function Form() {
     setTodoList(items);
   };
 
-  const Todos = React.memo(() => todoList.map((todo, index) => (
-    <TodoList
-      key={todo.id}
-      todo={todo}
-      todoList={todoList}
-      index={index}
-      setTodoList={setTodoList}
-    />
-  )));
+  const Todos = React.memo(() =>
+    todoList.map((todo, index) => (
+      <TodoList
+        key={todo.id}
+        todo={todo}
+        todoList={todoList}
+        index={index}
+        setTodoList={setTodoList}
+      />
+    ))
+  );
 
   return (
     <div className="todo_list">
       <form onSubmit={handleSubmit}>
-        <input type="text" value={value} placeholder="Add Task" size="29.5" onChange={handleChange} />
+        <input
+          type="text"
+          value={value}
+          placeholder="Add Task"
+          size="29.5"
+          onChange={handleChange}
+        />
       </form>
       <DragDropContext onDragEnd={handleOnDragEnd}>
         <Droppable droppableId="todos">

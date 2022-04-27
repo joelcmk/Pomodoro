@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-expressions */
-/* eslint-disable react/jsx-filename-extension */
 import React, { useState, useEffect } from 'react';
 import ProgressBar from './ProgressBar';
 import { bgRed, bgGreen } from '../constants/Index';
@@ -33,35 +31,36 @@ function Timer() {
   }, [background]);
 
   useEffect(() => {
-    const focusTime = cycleNumber === 1 || cycleNumber === 3 || cycleNumber === 5;
-    const shortBreak = cycleNumber === 2 || cycleNumber === 4;
-    const breaks = shortBreak || cycleNumber === 6;
+    const breakAndFocusTime = () => {
+      setStart(false);
+      setSeconds(0);
+      if (cycleNumber % 2 === 0) {
+        setBackground(bgGreen);
+        setColor('green');
+        setText('Time to Relax!');
+      } else {
+        setBackground(bgRed);
+        setColor('red');
+        setText('Time to focus!');
+      }
+    };
 
-    const breakAndFocusTime = setStart(false); setSeconds(0); if (breaks) {
-      setBackground(bgGreen);
-      setColor('green');
-      setText('Time to Relax!');
-    } else {
-      setBackground(bgRed);
-      setColor('red');
-      setText('Time to focus!');
-    }
-
-    if (focusTime) {
-      breaks;
+    if (cycleNumber % 2 !== 0) {
+      // Focus Time
+      breakAndFocusTime();
       setMinutes(25);
-    } else if (shortBreak) {
-      // Short break
-      breakAndFocusTime;
-      setMinutes(5);
     } else if (cycleNumber === 6) {
       // Long Break
-      breakAndFocusTime;
+      breakAndFocusTime();
       setMinutes(15);
     } else if (cycleNumber === 7) {
       // Repeat Cycle
       setStart(false);
       setCycleNumber(1);
+    } else if (cycleNumber % 2 === 0) {
+      // Short break
+      breakAndFocusTime();
+      setMinutes(5);
     }
   }, [cycleNumber]);
 
@@ -111,13 +110,15 @@ function Timer() {
   return (
     <div className="pomodoro">
       <span className="text">{text}</span>
-      <ProgressBar cycleNumber={cycleNumber} minutes={minutes} seconds={seconds} />
+      <ProgressBar
+        cycleNumber={cycleNumber}
+        minutes={minutes}
+        seconds={seconds}
+      />
       <div className="timer-box">
         <div>
           <div className="timer">
-            {timerMinutes}
-            :
-            {timerSeconds}
+            {timerMinutes}:{timerSeconds}
           </div>
           <div className="button">
             {start ? (
